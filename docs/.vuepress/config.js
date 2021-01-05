@@ -12,19 +12,44 @@ module.exports = {
         },
     },
     themeConfig: {
-        lastUpdated: "上次更新",
         nav: [
             { text: "主页", link: "/" },
             { text: "canvas", link: "https://ruizer.github.io/canvas-study/" },
             { text: "Github", link: "https://github.com/ruizer/blog" },
         ],
         sidebar: {
-            "/vue/": [
+            "/note/": [
                 {
                     title: "vue",
                     collapsable: false,
                     sidebarDepth: 2,
-                    children: ["01", "02", "03"],
+                    children: ["css/01"],
+                },
+                {
+                    title: "css",
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: ["vue/01"],
+                },
+                {
+                    title: "旧文",
+                    path: "/note/old/",
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: [
+                        "old/window-post-message-for-wechat-login",
+                        "old/css-function",
+                        "old/table-grad",
+                        "old/front-end-util-code",
+                        "old/js-xlsx",
+                        "old/publish-npm-package",
+                        "old/vue-style-cli",
+                        "old/window-print",
+                        "old/javascript-basis-datatype",
+                        "old/javascript-basis-typeof-instanceof",
+                        "old/javascript-basis",
+                        "old/javascript-basis-this",
+                    ],
                 },
             ],
         },

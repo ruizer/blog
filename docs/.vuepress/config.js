@@ -32,6 +32,12 @@ module.exports = {
                     children: ["vue/01"],
                 },
                 {
+                    title: "git",
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: ["git/command"]
+                },
+                {
                     title: "旧文",
                     path: "/note/old/",
                     collapsable: false,

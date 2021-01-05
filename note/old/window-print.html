@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>window.print 浏览器打印全集~ | ruizer博客</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/blog/images/favicon.png">
+    <meta name="description" content="个人博客">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.15cc3f33.css" as="style"><link rel="preload" href="/blog/assets/js/app.b7c18900.js" as="script"><link rel="preload" href="/blog/assets/js/2.c2dfc82c.js" as="script"><link rel="preload" href="/blog/assets/js/22.5c4d59e5.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.af6c2ee7.js"><link rel="prefetch" href="/blog/assets/js/11.e259d51b.js"><link rel="prefetch" href="/blog/assets/js/12.a8cca7fe.js"><link rel="prefetch" href="/blog/assets/js/13.dc1aa0d4.js"><link rel="prefetch" href="/blog/assets/js/14.13707bb3.js"><link rel="prefetch" href="/blog/assets/js/15.0ede1cb9.js"><link rel="prefetch" href="/blog/assets/js/16.cabef3a8.js"><link rel="prefetch" href="/blog/assets/js/17.a6e425d3.js"><link rel="prefetch" href="/blog/assets/js/18.fd7f437b.js"><link rel="prefetch" href="/blog/assets/js/19.bed9aca4.js"><link rel="prefetch" href="/blog/assets/js/20.c6c417dd.js"><link rel="prefetch" href="/blog/assets/js/21.8537bcc3.js"><link rel="prefetch" href="/blog/assets/js/23.33caabb1.js"><link rel="prefetch" href="/blog/assets/js/24.fd7f118c.js"><link rel="prefetch" href="/blog/assets/js/25.bcbed8e6.js"><link rel="prefetch" href="/blog/assets/js/3.e7ad5b0b.js"><link rel="prefetch" href="/blog/assets/js/4.202a4c24.js"><link rel="prefetch" href="/blog/assets/js/5.0ebb7352.js"><link rel="prefetch" href="/blog/assets/js/6.b50ee000.js"><link rel="prefetch" href="/blog/assets/js/7.9a24dd49.js"><link rel="prefetch" href="/blog/assets/js/8.f907d5ec.js"><link rel="prefetch" href="/blog/assets/js/9.15d953d5.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.15cc3f33.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">ruizer博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="https://ruizer.github.io/canvas-study/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  canvas
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ruizer/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="https://ruizer.github.io/canvas-study/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  canvas
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ruizer/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vue</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/css/01.html" class="sidebar-link">css01</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>css</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/vue/01.html" class="sidebar-link">vue01</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/note/old/" class="sidebar-heading clickable router-link-active open"><span>旧文</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/old/window-post-message-for-wechat-login.html" class="sidebar-link">利用 postMessage 的骚操作来实现微信网页授权登陆</a></li><li><a href="/blog/note/old/css-function.html" class="sidebar-link">CSS 函数表达式用处大大的</a></li><li><a href="/blog/note/old/table-grad.html" class="sidebar-link">原生JS实现table表格列宽拖拽</a></li><li><a href="/blog/note/old/front-end-util-code.html" class="sidebar-link">打造自己的前端业务代码库</a></li><li><a href="/blog/note/old/js-xlsx.html" class="sidebar-link">真实业务系列：在浏览器中使用 js-xlsx ，实现纯前端解析Excel文件，实现批量导入功能</a></li><li><a href="/blog/note/old/publish-npm-package.html" class="sidebar-link">如何发布自己的NPM包？</a></li><li><a href="/blog/note/old/vue-style-cli.html" class="sidebar-link">如何写一个命令行工具：NPM 自动生成VUE组件模板</a></li><li><a href="/blog/note/old/window-print.html" aria-current="page" class="active sidebar-link">window.print 浏览器打印全集~</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/old/window-print.html#打印接口" class="sidebar-link">打印接口</a></li><li class="sidebar-sub-header"><a href="/blog/note/old/window-print.html#打印样式相关" class="sidebar-link">打印样式相关</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/old/window-print.html#样式引用方式" class="sidebar-link">样式引用方式</a></li><li class="sidebar-sub-header"><a href="/blog/note/old/window-print.html#打印时颜色消失" class="sidebar-link">打印时颜色消失</a></li><li class="sidebar-sub-header"><a href="/blog/note/old/window-print.html#表格-或其他-被分页分割" class="sidebar-link">表格(或其他)被分页分割</a></li><li class="sidebar-sub-header"><a href="/blog/note/old/window-print.html#设定-page" class="sidebar-link">设定@page</a></li><li class="sidebar-sub-header"><a href="/blog/note/old/window-print.html#彩色打印" class="sidebar-link">彩色打印</a></li><li class="sidebar-sub-header"><a href="/blog/note/old/window-print.html#杂七杂八" class="sidebar-link">杂七杂八</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/old/window-print.html#个性化定制打印区域-打印内容" class="sidebar-link">个性化定制打印区域/打印内容</a></li><li class="sidebar-sub-header"><a href="/blog/note/old/window-print.html#实现页面排版与打印一致" class="sidebar-link">实现页面排版与打印一致</a></li></ul></li><li><a href="/blog/note/old/javascript-basis-datatype.html" class="sidebar-link">JavaScript相关知识点集锦(一)：数据类型</a></li><li><a href="/blog/note/old/javascript-basis-typeof-instanceof.html" class="sidebar-link">JavaScript相关知识点集锦(二)：typeof 与 instanceof</a></li><li><a href="/blog/note/old/javascript-basis.html" class="sidebar-link">JavaScript相关知识点集锦(三)：类型转换</a></li><li><a href="/blog/note/old/javascript-basis-this.html" class="sidebar-link">JavaScript相关知识点集锦(四)：this 、箭头函数、以及apply、call与bind</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="window-print-浏览器打印全集"><a href="#window-print-浏览器打印全集" class="header-anchor">#</a> window.print 浏览器打印全集~</h1> <blockquote><p>本文配套<a href="https://ruizer.github.io/demo/#/print" target="_blank" rel="noopener noreferrer">Demo<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <p>近日做了浏览器打印，这里总结下相关的知识点，并不保证准确性。</p> <h2 id="打印接口"><a href="#打印接口" class="header-anchor">#</a> 打印接口</h2> <p>首先浏览器打印已经是非常成熟的应用了，一般是不会存在一些兼容性问题</p> <p>最简单的打印就是直接调用 <code>window.print()</code> ，当然用 <code>document.execCommand('print')</code> 也可以达到同样的效果
+
+一般直接在网页调用 <code>print</code> 方法是满足不了我们的业务需求：</p> <ul><li>打印的时候不同风格样式</li> <li>特定纸张大小和方向</li> <li>打印特定区域等等</li></ul> <p>所以我们需要一些特定的办法来帮助我们改善用户体验！</p> <h2 id="打印样式相关"><a href="#打印样式相关" class="header-anchor">#</a> 打印样式相关</h2> <h3 id="样式引用方式"><a href="#样式引用方式" class="header-anchor">#</a> 样式引用方式</h3> <ol><li>print style sheet (打印样式表)
+引入 <code>link</code> 时，加个 <code>media=&quot;print&quot;</code> 来标识这是打印机才会应用的样式：</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;link href=&quot;/example.css&quot; media=&quot;print&quot; rel=&quot;stylesheet&quot; /&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>这样，打印的时候就会默认将该样式应用到这些文档中</p> <ol start="2"><li>@media (媒介查询)
+如果特定的打印样式并不是很多，我们完全没必要重新写个样式表，利用媒介查询就可以了：</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>@media print {
+    // 这里面的样式，打印的时候才会生效
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="打印时颜色消失"><a href="#打印时颜色消失" class="header-anchor">#</a> 打印时颜色消失</h3> <p>打印时你可能会遇到背景颜色消失的情况，针对这个问题，<code>print-color-adjust</code> 可以解决你的问题</p> <p>属性 <code>print-color-adjust</code> 用来设定浏览器打印背景颜色(或背景图片)的行为，它有两个比较重要的参数：</p> <ul><li>economy（默认值）：允许浏览器自动调整</li> <li>exact：使用你设定好的样式颜色
+代码如下</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>@media print {
+    body {
+        -webkit-print-color-adjust: exact !important;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="表格-或其他-被分页分割"><a href="#表格-或其他-被分页分割" class="header-anchor">#</a> 表格(或其他)被分页分割</h3> <p>针对这个问题，重点介绍以下三个属性：</p> <ul><li>break-after（<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/break-after" target="_blank" rel="noopener noreferrer">MDN说明链接<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）</li> <li>break-before（<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/break-before" target="_blank" rel="noopener noreferrer">MDN说明链接<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）</li> <li>break-inside（<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/break-inside" target="_blank" rel="noopener noreferrer">MDN说明链接<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）</li></ul> <p>这三个属性与页面断点有关系，利用这些属性可以生产元素前后换页等效果，详细内容可以看 MDN 说明。
+在这里我们主要用第三个属性 <code>break-inside</code>，元素内容中间，不可以被换页
+代码如下，设定一个class no-break 给不想换页的元素</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;p class=&quot;no-break&quot;&gt;我不想被换页&lt;/p&gt;
+@media print {
+    .no-break {
+        break-inside: avoid;
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="设定-page"><a href="#设定-page" class="header-anchor">#</a> 设定@page</h3> <p>利用 <code>@page</code> 可以设定纸张配置，有两个比较常用的属性</p> <ul><li>size：指定目标纸张的尺寸（A4、A5）、以及页面方向（portrait / landscape）</li> <li>margin:：利用 <code>margin</code> 设定边距</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>@page {
+   size: A4 portrait;
+   margin: 10mm;
+}
+@page :first {
+   margin-top: 20mm;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="彩色打印"><a href="#彩色打印" class="header-anchor">#</a> 彩色打印</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>@media print and (color) {
+    // 杂七杂八
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="杂七杂八"><a href="#杂七杂八" class="header-anchor">#</a> 杂七杂八</h3> <ol><li>表格相关
+如果表格分页了，表头<code>thead</code>、表尾<code>tfoot</code>是每页都会打印的</li> <li>display:none<div class="language- line-numbers-mode"><pre class="language-text"><code>// 不想打印出来的可以使用display：none
+@media print {
+    .no-print {
+        display:none
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li></ol> <h2 id="个性化定制打印区域-打印内容"><a href="#个性化定制打印区域-打印内容" class="header-anchor">#</a> 个性化定制打印区域/打印内容</h2> <p>如果我们只想打印某一区域又不想重新写样式表哈，什么的。可以直接使用<a href="https://github.com/crabbly/print.js" target="_blank" rel="noopener noreferrer">Print.js<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>、<a href="https://github.com/DoersGuild/jQuery.print" target="_blank" rel="noopener noreferrer">jQuery.print<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。
+当然，你也可以自己写一个，大概的思路是创建一个 <code>iframe</code>，要打印的dom和样式表都丢进去，再调用iframe的打印事件。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+/** 给打印增加默认样式 */
+function myStyle(mode) {
+  mode = mode.toLowerCase();
+  mode = mode === 'landscape' ? mode : 'portrait';
+  const style = document.createElement('style');
+  style.type = 'text/css';
+  style.innerHTML = `@page { size: ${mode}; margin: 10mm;}`;
+  return style;
+}
+
+/** @description 动态打印 */
+export const printPartial = (
+  dom,
+  { title = document.title, mode = 'portrait' } = {},
+) =&gt; {
+  if (!(dom &amp;&amp; dom.outerHTML)) return;
+  let copyDom = document.createElement('span');
+  const styleDom = document.querySelectorAll('style, link, meta');
+  const titleDom = document.createElement('title');
+  titleDom.innerText = title;
+  copyDom.appendChild(titleDom);
+  Array.from(styleDom).forEach(item =&gt; {
+    copyDom.appendChild(item.cloneNode(true));
+  });
+  copyDom.appendChild(myStyle(mode));
+  const headTemp = copyDom.innerHTML;
+  copyDom = null;
+  const iframeDom = document.createElement('iframe');
+  const attrObj = {
+    height: 0,
+    width: 0,
+    border: 0,
+    wmode: 'Opaque',
+  };
+  const styleObj = {
+    position: 'absolute',
+    top: '-999px',
+    left: '-999px',
+  };
+  Object.entries(attrObj).forEach(([key, value]) =&gt; {
+    iframeDom.setAttribute(key, value);
+  });
+  Object.entries(styleObj).forEach(([key, value]) =&gt; {
+    iframeDom.style[key] = value;
+  });
+  
+  iframeDom.srcdoc = `&lt;html&gt;&lt;head&gt;${headTemp}&lt;/head&gt;&lt;/head&gt;&lt;body style=&quot;-webkit-print-color-adjust: exact;&quot;&gt;${dom.outerHTML}&lt;/body&gt;&lt;/html&gt;`;
+
+  document.body.insertBefore(iframeDom, document.body.children[0]);
+  const iframeWin = iframeDom.contentWindow;
+  iframeDom.onload = () =&gt; {
+    iframeWin.focus();
+    iframeWin.print();
+    document.body.removeChild(iframeDom);
+  };
+};
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br></div></div><h2 id="实现页面排版与打印一致"><a href="#实现页面排版与打印一致" class="header-anchor">#</a> 实现页面排版与打印一致</h2> <p>要实现页面排版与打印一致，首先要考虑的就是页面尺寸问题，但是 <code>web</code> 端大小单位并不是纸张大小距离单位（如cm、mm）。</p> <p>这里就有了一个计算方式：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>假如电脑分辨率是 `D` 像素/英寸，其中一英寸为 `25.4` 毫米 
+纸张大小为 `I` 英寸（`M 毫米 / 25.4`）
+直接用 ` D * I ` （`M 毫米 * D / 25.4`）就得到A4纸的像素宽了。
+
+页边距： 0.75 inch
+A4: 8.27x11.69 inch
+屏幕DPI  : 96DPI
+width　=　(8.27 - 0.75 * 2) * 96 = 650 px
+height =  (11.69 - 0.75 * 2)* 96 = 978 px
+
+这里得出：当页面width=650px, height=978px时，打印时，刚好能打印一页的A4纸
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>但是呢，光有计算方式没有用，主要是 <code>DPI</code> 电脑分辨率的 问题，不同设备分辨率不一样，这里提供一个方法（不保证靠谱）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 计算分辨率
+const arrDPI = []
+const tmpNode = document.createElement('div')
+tmpNode.style.cssText = 'width:1in;height:1in;position:absolute;left:0;top:0;z-index:99;visibility:hidde'
+document.body.appendChild(tmpNode)
+arrDPI[0] = parseInt(tmpNode.offsetWidth)
+arrDPI[1] = parseInt(tmpNode.offsetHeight)
+tmpNode.parentNode.removeChild(tmpNode)
+const DPI = Math.min(...arrDPI)
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>本文完， 感谢阅读。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/note/old/vue-style-cli.html" class="prev">
+        如何写一个命令行工具：NPM 自动生成VUE组件模板
+      </a></span> <span class="next"><a href="/blog/note/old/javascript-basis-datatype.html">
+        JavaScript相关知识点集锦(一)：数据类型
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.b7c18900.js" defer></script><script src="/blog/assets/js/2.c2dfc82c.js" defer></script><script src="/blog/assets/js/22.5c4d59e5.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript相关知识点集锦(四)：this 、箭头函数、以及apply、call与bind | ruizer博客</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/blog/images/favicon.png">
+    <meta name="description" content="个人博客">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.15cc3f33.css" as="style"><link rel="preload" href="/blog/assets/js/app.b7c18900.js" as="script"><link rel="preload" href="/blog/assets/js/2.c2dfc82c.js" as="script"><link rel="preload" href="/blog/assets/js/9.15d953d5.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.af6c2ee7.js"><link rel="prefetch" href="/blog/assets/js/11.e259d51b.js"><link rel="prefetch" href="/blog/assets/js/12.a8cca7fe.js"><link rel="prefetch" href="/blog/assets/js/13.dc1aa0d4.js"><link rel="prefetch" href="/blog/assets/js/14.13707bb3.js"><link rel="prefetch" href="/blog/assets/js/15.0ede1cb9.js"><link rel="prefetch" href="/blog/assets/js/16.cabef3a8.js"><link rel="prefetch" href="/blog/assets/js/17.a6e425d3.js"><link rel="prefetch" href="/blog/assets/js/18.fd7f437b.js"><link rel="prefetch" href="/blog/assets/js/19.bed9aca4.js"><link rel="prefetch" href="/blog/assets/js/20.c6c417dd.js"><link rel="prefetch" href="/blog/assets/js/21.8537bcc3.js"><link rel="prefetch" href="/blog/assets/js/22.5c4d59e5.js"><link rel="prefetch" href="/blog/assets/js/23.33caabb1.js"><link rel="prefetch" href="/blog/assets/js/24.fd7f118c.js"><link rel="prefetch" href="/blog/assets/js/25.bcbed8e6.js"><link rel="prefetch" href="/blog/assets/js/3.e7ad5b0b.js"><link rel="prefetch" href="/blog/assets/js/4.202a4c24.js"><link rel="prefetch" href="/blog/assets/js/5.0ebb7352.js"><link rel="prefetch" href="/blog/assets/js/6.b50ee000.js"><link rel="prefetch" href="/blog/assets/js/7.9a24dd49.js"><link rel="prefetch" href="/blog/assets/js/8.f907d5ec.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.15cc3f33.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">ruizer博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="https://ruizer.github.io/canvas-study/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  canvas
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ruizer/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="https://ruizer.github.io/canvas-study/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  canvas
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ruizer/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vue</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/css/01.html" class="sidebar-link">css01</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>css</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/vue/01.html" class="sidebar-link">vue01</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/note/old/" class="sidebar-heading clickable router-link-active open"><span>旧文</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/old/window-post-message-for-wechat-login.html" class="sidebar-link">利用 postMessage 的骚操作来实现微信网页授权登陆</a></li><li><a href="/blog/note/old/css-function.html" class="sidebar-link">CSS 函数表达式用处大大的</a></li><li><a href="/blog/note/old/table-grad.html" class="sidebar-link">原生JS实现table表格列宽拖拽</a></li><li><a href="/blog/note/old/front-end-util-code.html" class="sidebar-link">打造自己的前端业务代码库</a></li><li><a href="/blog/note/old/js-xlsx.html" class="sidebar-link">真实业务系列：在浏览器中使用 js-xlsx ，实现纯前端解析Excel文件，实现批量导入功能</a></li><li><a href="/blog/note/old/publish-npm-package.html" class="sidebar-link">如何发布自己的NPM包？</a></li><li><a href="/blog/note/old/vue-style-cli.html" class="sidebar-link">如何写一个命令行工具：NPM 自动生成VUE组件模板</a></li><li><a href="/blog/note/old/window-print.html" class="sidebar-link">window.print 浏览器打印全集~</a></li><li><a href="/blog/note/old/javascript-basis-datatype.html" class="sidebar-link">JavaScript相关知识点集锦(一)：数据类型</a></li><li><a href="/blog/note/old/javascript-basis-typeof-instanceof.html" class="sidebar-link">JavaScript相关知识点集锦(二)：typeof 与 instanceof</a></li><li><a href="/blog/note/old/javascript-basis.html" class="sidebar-link">JavaScript相关知识点集锦(三)：类型转换</a></li><li><a href="/blog/note/old/javascript-basis-this.html" aria-current="page" class="active sidebar-link">JavaScript相关知识点集锦(四)：this 、箭头函数、以及apply、call与bind</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/old/javascript-basis-this.html#正确判断-this" class="sidebar-link">正确判断 this</a></li><li class="sidebar-sub-header"><a href="/blog/note/old/javascript-basis-this.html#手写-apply、call、bind" class="sidebar-link">手写 apply、call、bind</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="javascript相关知识点集锦-四-this-、箭头函数、以及apply、call与bind"><a href="#javascript相关知识点集锦-四-this-、箭头函数、以及apply、call与bind" class="header-anchor">#</a> JavaScript相关知识点集锦(四)：this 、箭头函数、以及apply、call与bind</h1> <blockquote><p>本文分为两部分：</p> <ul><li>正确判断 <code>this</code></li> <li>手写 <code>apply</code>、<code>call</code>、<code>bind</code></li></ul></blockquote> <h2 id="正确判断-this"><a href="#正确判断-this" class="header-anchor">#</a> 正确判断 <code>this</code></h2> <p><code>this</code> 是个容易让人混淆的概念，但只要我们理清了思路就会很容易理解。</p> <p>对于单个规则来说，我们可以按照下面的流程来进行判断：
+</p> <ul><li>首先，判断函数类型
+<ul><li>若是箭头函数，<code>this</code> 就是包裹箭头函数的第一个普通函数的 <code>this</code></li> <li>若是<code>apply</code>、<code>call</code>、<code>bind</code>，<code>this</code> 是第一个参数</li> <li>普通函数的话，要判断函数是如何被调用的
+<ul><li><code>new</code> 的方式，<code>this</code> 被固化在实例上面</li> <li>除了 <code>new</code> 方式以外，判断函数是直接调用（ <code>foo()</code> ）还是通过对象调用 （ <code>obj.foo()</code> ）
+<ul><li><code>foo()</code> 方式，<code>this</code> 为 <code>window</code></li> <li><code>obj.foo()</code> 方式，<code>this</code> 为 <code>obj</code></li></ul></li></ul></li></ul></li></ul> <p><img src="/blog/assets/img/this.ff08b844.png" alt="image"></p> <p>通过这个流程，我们可以准确判断 <code>this</code>。当然，如果我们向改变 <code>this</code>，就可以采用以下方式：</p> <ol><li>使用箭头函数</li> <li>使用 <code>apply</code>、<code>call</code>、<code>bind</code> 方法</li> <li>当然，构造函数也可以改变 <code>this</code>，通过对象调用也行</li></ol> <h2 id="手写-apply、call、bind"><a href="#手写-apply、call、bind" class="header-anchor">#</a> 手写 <code>apply</code>、<code>call</code>、<code>bind</code></h2> <p>关于 <code>apply</code>、<code>call</code>、<code>bind</code>，都可以改变 <code>this</code> 的指向，但稍稍有些不同。</p> <ol><li><code>apply</code> 和 <code>call</code> 的区别
+其实 <code>apply</code> 和 <code>call</code> 基本类似，他们的区别主要是传参不同
+<blockquote><p><code>call</code> 的语法：
+fun.call(thisArg[, arg1[, arg2[, ...]]])
+<code>apply</code> 的语法：
+fun.apply(thisArg, [argsArray])
+所以 <code>apply</code> 和 <code>call</code> 的区别是 <code>call</code> 方法接受的是若干个参数列表，而 <code>apply</code> 接收的是一个包含多个参数的数组。</p></blockquote></li> <li><code>bind</code> 和 <code>apply</code>、<code>call</code> 区别
+<blockquote><p>bind()方法创建一个新的函数, 当被调用时，将其this关键字设置为提供的值，在调用新函数时，在任何提供之前提供一个给定的参数序列。
+从这句话，我们可以看出，<code>bind</code> 是创建一个新的函数，需要我们手动去执行。
+这是 <code>bind</code> 与 <code>apply</code> 、<code>call</code> 的主要区别。</p></blockquote></li> <li>手写 <code>apply</code>、<code>call</code>、<code>bind</code></li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>    Function.prototype.myCall = function(context) {
+    if (typeof this !== 'function') {
+        throw new TypeError('Error')
+    }
+    context = context || window
+    context.fn = this
+    const args = [...arguments].slice(1)
+    const result = context.fn(...args)
+    delete context.fn
+    return result
+}
+
+Function.prototype.myApply = function(context) {
+    if (typeof this !== 'function') {
+        throw new TypeError('Error')
+    }
+    context = context || window
+    context.fn = this
+    let result
+    if (arguments[1]) {
+        result = context.fn(...arguments[1])
+    } else {
+        result = context.fn()
+    }
+    return result
+}
+
+Function.prototype.myBind = function(context) {
+    if (typeof this !== 'function') {
+        throw new TypeError('Error')
+    }
+    const _this = this
+    const args = [...arguments].slice(1)
+
+    return function F() {
+        if (this instanceof F) {
+            return new _this(...args, ...arguments)
+        }
+        return _this.apply(context, args.concat(...arguments))
+    }
+}
+
+var obj = {
+    name: '这是'
+}
+
+function printName (fname, lname) {
+    console.log(this)
+    console.log(`${this.name} ${fname}${lname}`)
+}
+
+printName('liao', 'rui')
+printName.myCall(obj, 'liao', 'rui')
+printName.myApply(obj, ['liao', 'rui'])
+printName.myBind(obj, 'liao', 'rui')()
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><p>本文完， 感谢阅读。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/note/old/javascript-basis.html" class="prev">
+        JavaScript相关知识点集锦(三)：类型转换
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.b7c18900.js" defer></script><script src="/blog/assets/js/2.c2dfc82c.js" defer></script><script src="/blog/assets/js/9.15d953d5.js" defer></script>
+  </body>
+</html>

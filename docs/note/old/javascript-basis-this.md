@@ -20,7 +20,7 @@
             - `foo()` 方式，`this` 为 `window`
             - `obj.foo()` 方式，`this` 为 `obj`
 
-![image](../../images/old/javascriptBasis/4/this.webp)
+![image](../../images/old/javascriptBasis/4/this.png)
 
 通过这个流程，我们可以准确判断 `this`。当然，如果我们向改变 `this`，就可以采用以下方式：
 1. 使用箭头函数

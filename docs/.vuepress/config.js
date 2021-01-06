@@ -41,7 +41,14 @@ module.exports = {
                     title: "nginx",
                     collapsable: false,
                     sidebarDepth: 2,
-                    children: ["nginx/nginx-vue"],
+                    children: ["nginx/nginx-vue", "nginx/ubuntu-handle-nginx"],
+                },
+                {
+                    title: "docker",
+                    path: "/note/docker/",
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: ["docker/install"],
                 },
                 {
                     title: "转载",

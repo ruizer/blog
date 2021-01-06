@@ -23,24 +23,35 @@ module.exports = {
                     title: "vue",
                     collapsable: false,
                     sidebarDepth: 2,
-                    children: ["css/01"],
+                    children: ["vue/01"],
                 },
                 {
                     title: "css",
                     collapsable: false,
                     sidebarDepth: 2,
-                    children: ["vue/01"],
+                    children: ["css/01"],
                 },
                 {
                     title: "git",
                     collapsable: false,
                     sidebarDepth: 2,
-                    children: ["git/command"]
+                    children: ["git/command"],
+                },
+                {
+                    title: "nginx",
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: ["nginx/nginx-vue"],
+                },
+                {
+                    title: "转载",
+                    path: "/note/reprint/",
+                    sidebarDepth: 2,
+                    children: ["reprint/css-word", "reprint/nginx"],
                 },
                 {
                     title: "旧文",
                     path: "/note/old/",
-                    collapsable: false,
                     sidebarDepth: 2,
                     children: [
                         "old/window-post-message-for-wechat-login",

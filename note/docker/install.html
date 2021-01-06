@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>安装 docker | ruizer博客</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/blog/images/favicon.png">
+    <meta name="description" content="个人博客">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.6238c46d.css" as="style"><link rel="preload" href="/blog/assets/js/app.96b9887a.js" as="script"><link rel="preload" href="/blog/assets/js/2.87d65e63.js" as="script"><link rel="preload" href="/blog/assets/js/17.434cb2c8.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.5c24fda4.js"><link rel="prefetch" href="/blog/assets/js/11.03d7e4d9.js"><link rel="prefetch" href="/blog/assets/js/12.d4136294.js"><link rel="prefetch" href="/blog/assets/js/13.76680a5d.js"><link rel="prefetch" href="/blog/assets/js/14.2df48e7a.js"><link rel="prefetch" href="/blog/assets/js/15.bb78d689.js"><link rel="prefetch" href="/blog/assets/js/16.e8d7b02c.js"><link rel="prefetch" href="/blog/assets/js/18.32da293f.js"><link rel="prefetch" href="/blog/assets/js/19.92cb3459.js"><link rel="prefetch" href="/blog/assets/js/20.25a606ba.js"><link rel="prefetch" href="/blog/assets/js/21.5e45a274.js"><link rel="prefetch" href="/blog/assets/js/22.c4e0ef1b.js"><link rel="prefetch" href="/blog/assets/js/23.c6c61d88.js"><link rel="prefetch" href="/blog/assets/js/24.86a95840.js"><link rel="prefetch" href="/blog/assets/js/25.07971b50.js"><link rel="prefetch" href="/blog/assets/js/26.08f4144b.js"><link rel="prefetch" href="/blog/assets/js/27.121ab339.js"><link rel="prefetch" href="/blog/assets/js/28.02f91d38.js"><link rel="prefetch" href="/blog/assets/js/29.405ca797.js"><link rel="prefetch" href="/blog/assets/js/3.c5fec49a.js"><link rel="prefetch" href="/blog/assets/js/30.d99504d0.js"><link rel="prefetch" href="/blog/assets/js/31.e7cdbe6f.js"><link rel="prefetch" href="/blog/assets/js/32.e5283235.js"><link rel="prefetch" href="/blog/assets/js/33.ff0c0560.js"><link rel="prefetch" href="/blog/assets/js/4.42df839e.js"><link rel="prefetch" href="/blog/assets/js/5.871d6bd8.js"><link rel="prefetch" href="/blog/assets/js/6.245df098.js"><link rel="prefetch" href="/blog/assets/js/7.76108ab6.js"><link rel="prefetch" href="/blog/assets/js/8.158c95e9.js"><link rel="prefetch" href="/blog/assets/js/9.2c487097.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.6238c46d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">ruizer博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="https://ruizer.github.io/canvas-study/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  canvas
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ruizer/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="https://ruizer.github.io/canvas-study/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  canvas
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ruizer/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vue</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/vue/01.html" class="sidebar-link">vue01</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>css</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/css/01.html" class="sidebar-link">/note/css/01.html</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>git</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/git/command.html" class="sidebar-link">Git 常用命令</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>nginx</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/nginx/nginx-vue.html" class="sidebar-link">nginx 配置--部署 vue 项目</a></li><li><a href="/blog/note/nginx/ubuntu-handle-nginx.html" class="sidebar-link">Ubuntu 下安装与完全卸载 nginx</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/note/docker/" class="sidebar-heading clickable router-link-active open"><span>docker</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/docker/install.html" aria-current="page" class="active sidebar-link">安装 docker</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/docker/install.html#使用脚本快速安装-docker" class="sidebar-link">使用脚本快速安装 docker</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/docker/install.html#官方安装脚本" class="sidebar-link">官方安装脚本</a></li><li class="sidebar-sub-header"><a href="/blog/note/docker/install.html#阿里云的安装脚本" class="sidebar-link">阿里云的安装脚本</a></li><li class="sidebar-sub-header"><a href="/blog/note/docker/install.html#daocloud-的安装脚本" class="sidebar-link">DaoCloud 的安装脚本</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/docker/install.html#启动-docker" class="sidebar-link">启动 Docker</a></li><li class="sidebar-sub-header"><a href="/blog/note/docker/install.html#测试-docker-是否安装正确" class="sidebar-link">测试 Docker 是否安装正确</a></li><li class="sidebar-sub-header"><a href="/blog/note/docker/install.html#配置镜像加速器" class="sidebar-link">配置镜像加速器</a></li><li class="sidebar-sub-header"><a href="/blog/note/docker/install.html#安装-docker-compose" class="sidebar-link">安装 docker-compose</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog/note/reprint/" class="sidebar-heading clickable"><span>转载</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog/note/old/" class="sidebar-heading clickable"><span>旧文</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="安装-docker"><a href="#安装-docker" class="header-anchor">#</a> 安装 docker</h1> <blockquote><p>详情可见：https://yeasy.gitbook.io/docker_practice/install</p></blockquote> <h2 id="使用脚本快速安装-docker"><a href="#使用脚本快速安装-docker" class="header-anchor">#</a> 使用脚本快速安装 docker</h2> <h3 id="官方安装脚本"><a href="#官方安装脚本" class="header-anchor">#</a> 官方安装脚本</h3> <blockquote><p>Docker 官方为了简化安装流程，提供了一套安装脚本，Ubuntu 和 Debian 系统可 以使用这套脚本安装：</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>curl -sSL https://get.docker.com/ | sh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="阿里云的安装脚本"><a href="#阿里云的安装脚本" class="header-anchor">#</a> 阿里云的安装脚本</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="daocloud-的安装脚本"><a href="#daocloud-的安装脚本" class="header-anchor">#</a> DaoCloud 的安装脚本</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>curl -sSL https://get.daocloud.io/docker | sh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="启动-docker"><a href="#启动-docker" class="header-anchor">#</a> 启动 Docker</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>sudo systemctl enable docker
+sudo systemctl start docker
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="测试-docker-是否安装正确"><a href="#测试-docker-是否安装正确" class="header-anchor">#</a> 测试 Docker 是否安装正确</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ docker run hello-world
+
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+d1725b59e92d: Pull complete
+Digest: sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h2 id="配置镜像加速器"><a href="#配置镜像加速器" class="header-anchor">#</a> 配置镜像加速器</h2> <p>国内访问 Docker Hub 有时会遇到困难，此时可以配置镜像加速器。国内很多云服务商都提供了加速器服务：</p> <ul><li>阿里云加速器(点击管理控制台 -&gt; 登录账号(淘宝账号) -&gt; 右侧镜像中心 -&gt; 镜像加速器 -&gt; 复制地址)</li> <li>网易云加速器(https://www.163yun.com/help/documents/56918246390157312) https://hub-mirror.c.163.com</li> <li>百度云加速器(https://cloud.baidu.com/doc/CCE/s/Yjxppt74z#使用dockerhub加速器) https://mirror.baidubce.com</li></ul> <p>详情可见：https://yeasy.gitbook.io/docker_practice/install/mirror
+不使用命令，可以在<code>/etc/docker/daemon.json</code>中写入以下内容</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+  &quot;registry-mirrors&quot;: [
+    &quot;https://hub-mirror.c.163.com&quot;,
+    &quot;https://mirror.baidubce.com&quot;
+  ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>之后重启服务器：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>sudo systemctl daemon-reload
+sudo systemctl restart docker
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="安装-docker-compose"><a href="#安装-docker-compose" class="header-anchor">#</a> 安装 docker-compose</h2> <blockquote><p>https://blog.csdn.net/pushiqiang/article/details/78682323</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>sudo curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+# 挂载全局命令
+sudo chmod +x /usr/local/bin/docker-compose
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/note/nginx/ubuntu-handle-nginx.html" class="prev">
+        Ubuntu 下安装与完全卸载 nginx
+      </a></span> <span class="next"><a href="/blog/note/reprint/css-word.html">
+        《 CSS 世界》中的实用技巧
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.96b9887a.js" defer></script><script src="/blog/assets/js/2.87d65e63.js" defer></script><script src="/blog/assets/js/17.434cb2c8.js" defer></script>
+  </body>
+</html>

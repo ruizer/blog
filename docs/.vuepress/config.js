@@ -32,6 +32,12 @@ module.exports = {
                     children: ["css/01"],
                 },
                 {
+                    title: "node",
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: ["node/process-env"],
+                },
+                {
                     title: "git",
                     collapsable: false,
                     sidebarDepth: 2,
@@ -48,7 +54,7 @@ module.exports = {
                     path: "/note/docker/",
                     collapsable: false,
                     sidebarDepth: 2,
-                    children: ["docker/install"],
+                    children: ["docker/install", "docker/node-nuxt-mongodb"],
                 },
                 {
                     title: "转载",

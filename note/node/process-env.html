@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>来，让我们一起来盘盘 Nodejs 环境变量(process.env) | ruizer博客</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/blog/images/favicon.png">
+    <meta name="description" content="个人博客">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.a9429d79.css" as="style"><link rel="preload" href="/blog/assets/js/app.0dbc159f.js" as="script"><link rel="preload" href="/blog/assets/js/2.87d65e63.js" as="script"><link rel="preload" href="/blog/assets/js/23.1df0341b.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.8a522c7d.js"><link rel="prefetch" href="/blog/assets/js/11.e4afa879.js"><link rel="prefetch" href="/blog/assets/js/12.d4136294.js"><link rel="prefetch" href="/blog/assets/js/13.21303785.js"><link rel="prefetch" href="/blog/assets/js/14.2b72bddd.js"><link rel="prefetch" href="/blog/assets/js/15.6df3536a.js"><link rel="prefetch" href="/blog/assets/js/16.939012fc.js"><link rel="prefetch" href="/blog/assets/js/17.e7ca5a33.js"><link rel="prefetch" href="/blog/assets/js/18.b881534b.js"><link rel="prefetch" href="/blog/assets/js/19.cc26598c.js"><link rel="prefetch" href="/blog/assets/js/20.80586151.js"><link rel="prefetch" href="/blog/assets/js/21.b915f30e.js"><link rel="prefetch" href="/blog/assets/js/22.ed027599.js"><link rel="prefetch" href="/blog/assets/js/24.061ec7d6.js"><link rel="prefetch" href="/blog/assets/js/25.7bcbe552.js"><link rel="prefetch" href="/blog/assets/js/26.9e2becb0.js"><link rel="prefetch" href="/blog/assets/js/27.e0b993f6.js"><link rel="prefetch" href="/blog/assets/js/28.d87826aa.js"><link rel="prefetch" href="/blog/assets/js/29.70880dea.js"><link rel="prefetch" href="/blog/assets/js/3.810323f9.js"><link rel="prefetch" href="/blog/assets/js/30.9eedfc33.js"><link rel="prefetch" href="/blog/assets/js/31.6f2ace5d.js"><link rel="prefetch" href="/blog/assets/js/32.db786988.js"><link rel="prefetch" href="/blog/assets/js/33.359aaebb.js"><link rel="prefetch" href="/blog/assets/js/34.298691a2.js"><link rel="prefetch" href="/blog/assets/js/35.63e8dc66.js"><link rel="prefetch" href="/blog/assets/js/36.ae6818db.js"><link rel="prefetch" href="/blog/assets/js/4.53bf3a10.js"><link rel="prefetch" href="/blog/assets/js/5.88e7696d.js"><link rel="prefetch" href="/blog/assets/js/6.f1246b6f.js"><link rel="prefetch" href="/blog/assets/js/7.76108ab6.js"><link rel="prefetch" href="/blog/assets/js/8.24c4da04.js"><link rel="prefetch" href="/blog/assets/js/9.27334d45.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.a9429d79.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">ruizer博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="https://ruizer.github.io/canvas-study/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  canvas
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ruizer/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="https://ruizer.github.io/canvas-study/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  canvas
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/ruizer/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vue</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/vue/01.html" class="sidebar-link">vue01</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>css</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/css/01.html" class="sidebar-link">/note/css/01.html</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>node</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/node/process-env.html" aria-current="page" class="active sidebar-link">来，让我们一起来盘盘 Nodejs 环境变量(process.env)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/node/process-env.html#首先-process-env-是什么" class="sidebar-link">首先 process.env 是什么？</a></li><li class="sidebar-sub-header"><a href="/blog/note/node/process-env.html#如何修改" class="sidebar-link">如何修改？</a></li><li class="sidebar-sub-header"><a href="/blog/note/node/process-env.html#如何方便的切换环境" class="sidebar-link">如何方便的切换环境？</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/note/node/process-env.html#修改-package-json-文件" class="sidebar-link">修改 package.json 文件</a></li><li class="sidebar-sub-header"><a href="/blog/note/node/process-env.html#关于-dotenv" class="sidebar-link">关于 dotenv</a></li><li class="sidebar-sub-header"><a href="/blog/note/node/process-env.html#使用" class="sidebar-link">使用</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/note/node/process-env.html#分享一下我的方案" class="sidebar-link">分享一下我的方案</a></li><li class="sidebar-sub-header"><a href="/blog/note/node/process-env.html#最后" class="sidebar-link">最后</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>git</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/git/command.html" class="sidebar-link">Git 常用命令</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>nginx</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/nginx/nginx-vue.html" class="sidebar-link">nginx 配置--部署 vue 项目</a></li><li><a href="/blog/note/nginx/ubuntu-handle-nginx.html" class="sidebar-link">Ubuntu 下安装与完全卸载 nginx</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/note/docker/" class="sidebar-heading clickable"><span>docker</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/note/docker/install.html" class="sidebar-link">安装 docker</a></li><li><a href="/blog/note/docker/node-nuxt-mongodb.html" class="sidebar-link">一次部署 node+koa+mongodb+nuxt 项目的经历</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog/note/reprint/" class="sidebar-heading clickable"><span>转载</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog/note/old/" class="sidebar-heading clickable"><span>旧文</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="来-让我们一起来盘盘-nodejs-环境变量-process-env"><a href="#来-让我们一起来盘盘-nodejs-环境变量-process-env" class="header-anchor">#</a> 来，让我们一起来盘盘 Nodejs 环境变量(process.env)</h1> <blockquote><p>额，仅仅讨论 <code>process.env</code> 属性，项目上常用的 NODE_ENV 啊，自己定义的 SERVER_PATH、BASEURL、VUE_APP_TITLE 啥的，怎么修改，怎么方便快速切换环境，一起来盘盘</p></blockquote> <h2 id="首先-process-env-是什么"><a href="#首先-process-env-是什么" class="header-anchor">#</a> 首先 process.env 是什么？</h2> <p>官方解释：<code>process</code> 对象是一个全局变量，提供了有关当前 <code>Node.js</code> 进程的信息并对其进行控制；而 <code>process.env</code> 属性会返回包含用户环境的对象，如下所示(官方示例)：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+  TERM: 'xterm-256color',
+  SHELL: '/usr/local/bin/bash',
+  USER: 'nodejscn',
+  PATH: '~/.bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin',
+  PWD: '/Users/nodejscn',
+  EDITOR: 'vim',
+  SHLVL: '1',
+  HOME: '/Users/nodejscn',
+  LOGNAME: 'nodejscn',
+  _: '/usr/local/bin/node'
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>对，它是一个对象，不是我的对象，也不是你的对象～</p> <p>它是 Nodejs 应用程序中，<code>process.env</code> 属性，返回包含用户环境的对象，所以它不可以在客户端侧代码中使用，简单得来说就是浏览器上，打包后的静态资源。</p> <p>这时候就有人说了(假如)：不对啊，人家在写 <code>Vue</code> 项目的时候，可以在使用啊；比如 <code>VUE_APP_TITLE</code>，可以这样访问：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>console.log(process.env.VUE_APP_TITLE)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>懂的同学马上就懂了，不懂的同学你来看：<code>VUE_APP_TITLE</code>，标重点了，<strong>VUE_APP</strong>。</p> <p>是不是有那么一丝明悟，对的，在写 Vue 项目时，在客户端侧代码中，只有以 <code>VUE_APP_</code> 开头的变量会被 <code>webpack.DefinePlugin</code> 静态嵌入到客户端侧的包中，你才可以在应用的代码中访问它们；当然，还有两个特殊的变量也可以在应用中访问：<code>NODE_ENV</code> 和 <code>BASE_URL</code>；来自官方的解释：<a href="https://cli.vuejs.org/zh/guide/mode-and-env.html#%E5%9C%A8%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BE%A7%E4%BB%A3%E7%A0%81%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F" target="_blank" rel="noopener noreferrer">传送门<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>同样在 <code>React</code> 应用中，除了一些内置变量（ <code>NODE_ENV</code> 和 <code>PUBLIC_URL</code> ）之外，变量名必须以 <code>REACT_APP_</code> 开头才能使用。</p> <h2 id="如何修改"><a href="#如何修改" class="header-anchor">#</a> 如何修改？</h2> <p>要好好的使用 <code>process.env</code>，当然要知道如何修改它，就比如交往了一个女朋友，好吧，我没有女朋友。</p> <p>言归正传，怎么修改呢？</p> <p>答：直接赋值。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>process.env.girlfriend = 100
+console.log(process.env.girlfriend)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>咦，怎么打印出来的是字符串？聪明的同学已经发现了。</p> <p><s>我们不推荐这样的行为，不要做渣男，要一心一意。</s></p> <p>嗯，我们确实不推荐这样的行为，因为在 <code>process.env</code> 上为属性赋值会隐式地将值转换为字符串：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>process.env.girlfriend = true;
+console.log(process.env.girlfriend);
+// =&gt; 'true'
+
+process.env.girlfriend = 1;
+console.log(process.env.girlfriend);
+// =&gt; '1'
+
+process.env.girlfriend = null;
+console.log(process.env.girlfriend);
+// =&gt; 'null'
+
+process.env.girlfriend = undefined;
+console.log(process.env.girlfriend);
+// =&gt; 'undefined'
+
+process.env.girlfriend = {a: 'aa'};
+console.log(process.env.girlfriend);
+// =&gt; '[object Object]'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>并且，当值不是字符串、数字或布尔值时，Node.js 未来的版本可能会抛出错误。</p> <p>增删改查，如何删呢？直接 <code>delete</code> 就行了：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>process.env.girlfriend = 1;
+delete process.env.girlfriend
+console.log(process.env.girlfriend);
+// =&gt; undefined
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><strong>注意</strong>，在 <code>Windows</code> 操作系统上，环境变量没有大小写之分：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>process.env.GIRLFRIEND = 1;
+console.log(process.env.girlfriend);
+// =&gt; 'q'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="如何方便的切换环境"><a href="#如何方便的切换环境" class="header-anchor">#</a> 如何方便的切换环境？</h2> <p>在公司中，一个项目一般会有开发版本、测试版本、线上版本，也许还有预上线版本，每个版本对应不同参数，比如请求的 API 地址，或者图像字体资源地址等等；</p> <p>为了方便管理，我们通常做成配置文件的形式，根据不同的环境，加载不同的文件。毕竟我还要找女朋友，不能太 <strong>low</strong> 了。</p> <h3 id="修改-package-json-文件"><a href="#修改-package-json-文件" class="header-anchor">#</a> 修改 package.json 文件</h3> <p>比如我们现在要设置的环境变量 <strong>girlfriend</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+  ...,
+  &quot;scripts&quot;: {
+    &quot;normal&quot;: &quot;export girlfriend='woman' &amp;&amp; node friend.js&quot;,
+    &quot;sages&quot;: &quot;export girlfriend='monster' &amp;&amp; node friend.js&quot; // 在windows上export要换成set
+  },
+  ...
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><code>npm run normal</code> 就是正常模式</p> <p><code>npm run sages</code> 就是贤者模式</p> <p>现在，我们可以通过配置 <code>package.json</code> 来设置环境变量，就可以在代码中获取对应的值，所以我们就可以很轻松的换环境了。</p> <p>别急，可以使用 <a href="https://www.npmjs.com/cross-env" target="_blank" rel="noopener noreferrer">cross-env<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 依赖包，支持跨平台配置环境变量。
+安装依赖:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm install --save-dev cross-env
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>配置环境</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;scripts&quot;: {
+  &quot;normal&quot;: &quot;cross-env girlfriend='woman' node friend.js&quot;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>这样是不是好很多了~</p> <p>不对啊，贤者模式有很多种情况啊，比如时长、地点等等，一大串的拼在后面也很 low。</p> <p>其实有多种方法来解决这个问题，比如写个 <code>env</code> 模块</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// env.js
+module.exports = {
+  'normal': {
+    // 正常模式下的
+  },
+  // 其他模式
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>然后不同命令加载不同对象，进而修改环境变量:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const envConfig = require('env.js')[process.env.NODE_ENV];
+if (Object.prototype.toString.call(envConfig) === '[object Object]') {
+  for (const k in envConfig) {
+    process.env[k] = envConfig[k]
+  }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>当然还有很多种方式。</p> <p>在这里，我推荐使用 <code>.env</code>文件 结合 <code>dotenv</code> 依赖包的方式来实现。</p> <p>好了，我要正经起来了。</p> <h3 id="关于-dotenv"><a href="#关于-dotenv" class="header-anchor">#</a> 关于 dotenv</h3> <p><code>dotenv</code> 是一个零依赖包，可将环境变量从 <code>.env</code> 文件加载到 <code>process.env</code>；其原理是将 <code>.env</code> 文件解析为 <code>json</code> 对象，并对其中的 <code>key-value</code> 对通过 <code>process.env</code> 将其赋值为环境变量，之后便可通过 <code>process.env[key]</code> 来使用。</p> <p>基本使用流程如下</p> <h4 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h4> <div class="language- line-numbers-mode"><pre class="language-text"><code># with npm
+npm install dotenv
+
+# or with Yarn
+yarn add dotenv
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>require('dotenv').config() // 默认是.env文件
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>它会把项目根目录下的 <code>.env</code> 文件内容加载到 <code>process.env</code>。</p> <p>我们也可以使用它的 <code>Parse</code> 方法，拿到一个 <code>json</code> 对象</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const fs = require('fs')
+const dotenv = require('dotenv')
+const config = dotenv.parse(fs.readFileSync('.env')) // will return an object
+console.log(typeof config, config) // object { girlfriend : 'woman' }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>更多相关内容，请见：<a href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener noreferrer">传送门<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="分享一下我的方案"><a href="#分享一下我的方案" class="header-anchor">#</a> 分享一下我的方案</h2> <p>首先，不同环境对应不同 <code>.env</code> 文件，如：<code>.env.beta</code>、<code>.env.prod</code>；</p> <p><code>.env</code> 文件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>NODE_ENV = 'development'
+HOST = 'lacalhost'
+PORT = 3000
+MONGODB_HOST = '127.0.0.1'
+MONGODB_USERNAME = 'root'
+MONGODB_PASSWORD = '123'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p><code>.env.prod</code> 文件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>NODE_ENV = 'production'
+HOST = '10.100.xx.xx'
+PORT = 3000
+MONGODB_HOST = '43.247.xx.xx'
+MONGODB_USERNAME = 'root'
+MONGODB_PASSWORD = 'xxxxxx'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>之后在 <code>scripts</code> 命令中，使用 <code>--mode</code> 参数来区分不同环境，并与相关文件名对应；</p> <p><code>package.json</code> 文件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+  ...,
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;cross-env nodemon server/index.js --watch&quot;,
+    &quot;prod&quot;: &quot;cross-env node server/index.js --mode prod&quot;
+  },
+  ...
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>然后在执行文件中，拿到命令参数 <code>process.argv</code>，并根据不同 <code>mode</code> 来加载不同 <code>.env</code> 文件，这样，我们就可以很轻松的换环境了；</p> <p><code>server/index.js</code> 文件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const dotenv = require('dotenv')
+const argv = process.argv
+const mode = argv[2] === '--mode' ? argv[3] : ''
+const envFile = mode ? `.env.${mode}` : '.env'
+dotenv.config({ path: envFile })
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><strong>问题</strong>，声明命令参数必须统一，这样通过 <code>process.argv</code> 拿到的参数才能正确。比如：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// package.json
+&quot;scripts&quot;: {
+  &quot;dev&quot;: &quot;cross-env nodemon server/index.js --watch --mode dev&quot;
+}
+
+// server/index.js
+console.log(process.argv)
+// =&gt; ['xxx', 'xx', 'dev']
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>如果，要按照我这样的方式拿到参数，必须这样声明：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// package.json
+&quot;scripts&quot;: {
+  &quot;dev&quot;: &quot;cross-env nodemon server/index.js --mode dev --watch&quot;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>关于 <code>process.argv</code> 方面的内容，我不是特别明白，若有错误请见谅。</p> <h2 id="最后"><a href="#最后" class="header-anchor">#</a> 最后</h2> <p>新的一年，新的开始，希望大家在新的一年都能找到自己 <strong>对象</strong></p> <p>本文完。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/note/css/01.html" class="prev">
+        /note/css/01.html
+      </a></span> <span class="next"><a href="/blog/note/git/command.html">
+        Git 常用命令
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.0dbc159f.js" defer></script><script src="/blog/assets/js/2.87d65e63.js" defer></script><script src="/blog/assets/js/23.1df0341b.js" defer></script>
+  </body>
+</html>
